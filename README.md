@@ -2,158 +2,148 @@
 
 # 🚗💨 **Vehicle Speed Estimation using YOLO11 + ByteTrack + Perspective Transform**
 
-A complete real-world vehicle speed estimation pipeline built using modern computer vision techniques.  
-Designed for **OEM applications, telematics, smart transportation and intelligent CCTV analytics**.
+A professional, industry-ready implementation for estimating **real-world vehicle speeds** from CCTV footage.  
+Built for applications in **Smart Transportation, OEM Telematics (TATA/Mahindra), Traffic Analytics & Intelligent Surveillance**.
 
 ---
 
-### 📹 *Insert Sample Output Video Here*
-*(Add GIF / MP4 preview in this space)*
+### 📹 **Output Preview**
+*(Add your GIF/Video here)*
 
 ---
 
 </div>
 
-## 🏁 Overview
+---
 
-This project demonstrates how highway CCTV footage can be transformed into accurate vehicle speed measurements using:
+## 🔍 **Project Overview**
 
-- **YOLO11** for vehicle detection  
-- **ByteTrack** for stable object tracking  
-- **OpenCV Perspective Transformation** for pixel-to-meter world mapping  
-- **Motion-based speed estimation** in m/s and km/h  
+This project uses state-of-the-art vision models to detect, track, and calculate real-world vehicle speeds from angled CCTV highway footage.  
+It performs:
 
-This implementation is **fully reproducible**, modular, and optimized for Kaggle Notebook execution.
+- YOLO11-based vehicle detection  
+- ByteTrack multi-object tracking  
+- Perspective-to-world coordinate mapping  
+- Real-world displacement → speed estimation (m/s → km/h)  
+- Annotated video output  
+
+All code is executed inside a **Kaggle Notebook**.
 
 ---
 
-## ⭐ Why This Project Stands Out
+## 🧠 **How It Works**
 
-✔ Converts angled CCTV footage into **true top-down world coordinates**  
-✔ Reduces distortion using **homography & perspective transform**  
-✔ Evaluates speed using **real-world displacement**  
-✔ Provides **highway-grade accuracy** for OEM analytics  
-✔ Clean visualization with annotated bounding boxes & speeds  
+### **1️⃣ YOLO11 Detection**
+Detects vehicles per frame with high accuracy & real-time inference.
 
----
+### **2️⃣ ByteTrack Tracking**
+Assigns stable IDs, even during occlusions.
 
-## 🔍 Key Features
+### **3️⃣ Perspective Transformation**
+Raw footage is distorted; so we correct it using:
 
-- 🚘 **Real-time vehicle detection** (YOLO11)  
-- 🔢 **Unique multi-object tracking** (ByteTrack)  
-- 📐 **Perspective correction for distance accuracy**  
-- 🚀 **Smooth speed estimation with noise filtering**  
-- 📝 **Output labels with ID + Speed (km/h)**  
-- 🎥 **Final annotated video generation**  
-- 🎯 Ideal for OEMs like **Mahindra/TATA** for telematics
 
----
+This maps pixel coordinates → actual road distances (meters).
 
-## 🧠 Technical Workflow
-
-### **1️⃣ Detection – YOLO11**
-Detects vehicles per frame with high accuracy, even in complex lighting or motion.
-
-### **2️⃣ Tracking – ByteTrack**
-Assigns **persistent IDs** to moving vehicles.  
-Maintains continuity even in occlusions.
-
-### **3️⃣ Perspective Transform**
-The most essential step.
-
-Camera perspective distorts distances.  
-We correct that using a **homography matrix**:
-
-This maps every object’s pixel location → real-world coordinates.
-
----
-
-## ✨ Speed Estimation Formula (Pretty Version)
+### **4️⃣ Speed Estimation**
 
 <div align="center">
 
-### 📐 **Speed Computation**
-
-
-Where:
-
-- displacement is median of last N frame movements  
-- mapped using perspective transform matrix **H**  
-- FPS is frames per second of video  
 
 </div>
 
----
-
-## 🛠️ Tech Stack
-
-<div align="center">
-
-| Tool | Icon |
-|------|------|
-| **Python** | 🐍 |
-| **YOLO11 (Ultralytics)** | ⚡ |
-| **ByteTrack** | 🔗 |
-| **OpenCV** | 🎥 |
-| **NumPy** | 📊 |
-| **Supervision** | 🧩 |
-
-</div>
+We compute displacement using **Euclidean distance + Median Filtering** across frames.
 
 ---
 
-## ▶️ Running the Notebook
+## 🚀 **Key Features**
 
-Since this project runs on Kaggle:
-
-1. Open the notebook  
-2. Upload your highway footage  
-3. Run cells in order  
-4. Insert your perspective points in the UI cell  
-5. Final video will render with speed overlays  
-
----
-
-## 📊 Insights Observed
-
-- Vehicles moving toward camera → appear faster  
-- Opposite lane shows slower movement due to queue  
-- FPS stabilization improves output consistency  
-- Median filtering removes jitter  
+- High-accuracy YOLO11 vehicle detection  
+- Smooth tracking using ByteTrack  
+- True world-distance measurement via homography  
+- Real-time speed overlay on video  
+- Noise reduction using median smoothing  
+- Works on any fixed CCTV angle  
 
 ---
 
-## 🔮 Future Enhancements
+## 🛠️ **Tech Stack (With Official Logos)**
 
-- 🔍 **License Plate Recognition** (ANPR)  
-- 🚦 **Overspeed Violation Alerts**  
-- 🧠 **Traffic Congestion Prediction**  
-- 🚚 **Vehicle Classification (Truck/Car/Bus)**  
-- 🛰️ **Integration with telematics dashboards**  
+<h3 align="left">Languages & Tools:</h3>
+<p align="left">
+
+<a href="https://www.python.org/" target="_blank">
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="50" height="50" alt="Python"/>
+</a>
+
+<a href="https://opencv.org/" target="_blank">
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/opencv/opencv-original.svg" width="50" height="50" alt="OpenCV"/>
+</a>
+
+<a href="https://numpy.org/" target="_blank">
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original.svg" width="50" height="50" alt="NumPy"/>
+</a>
+
+<a href="https://github.com/ifzhang/ByteTrack" target="_blank">
+<img src="https://img.icons8.com/?size=512&id=GfDlQKkZSv2S&format=png" width="50" height="50" alt="ByteTrack"/>
+</a>
+
+<a href="https://ultralytics.com/" target="_blank">
+<img src="https://raw.githubusercontent.com/ultralytics/assets/main/logo/ultralytics-logo.png" width="120" alt="YOLO11"/>
+</a>
+
+</p>
+
+---
+
+## ▶️ **How to Run (Kaggle Notebook)**
+
+1. Upload your video  
+2. Define perspective points  
+3. Run YOLO11 detection  
+4. Run ByteTrack tracker  
+5. Execute speed estimation cell  
+6. Download the annotated output video  
+
+---
+
+## 📊 Insights from the Experiment
+
+- Vehicles moving toward camera appear faster due to angle compression  
+- Opposite lane shows traffic build-up → lower speeds  
+- Tracking stability determines accuracy  
+- Homography gives near real-world precision  
+
+---
+
+## 🔮 Improvements & Future Scope
+
+- ANPR (Number Plate Recognition)  
+- Overspeed violation alerts  
+- Vehicle classification (car/truck/bus)  
+- Traffic flow & congestion analytics  
+- Dashboard integration for OEM telematics  
 
 ---
 
 ## 📜 License
 
-Distributed under the **MIT License**.  
-Feel free to fork, use, or improve with attribution.
+This project is covered under the **MIT License**.
 
 ---
 
-## 👩‍💻 Author
+## 👩‍💻 **Author**
 
 **Musaddiqua Rajannavar**  
 AIML Intern | Technologics Global  
-📧 *your email*  
-🔗 GitHub: *your GitHub link*
+📧 your-email@example  
+🔗 GitHub: https://github.com/your-username
 
 ---
 
 <div align="center">
 
-### ⭐ If you like this project, consider giving it a star on GitHub!
+⭐ *If this project helped you, please star the repository. It motivates further development.*
 
 </div>
-
-
 
