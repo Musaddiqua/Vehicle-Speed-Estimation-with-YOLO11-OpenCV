@@ -2,41 +2,40 @@
 
 # 🚗💨 **Vehicle Speed Estimation using YOLO11 + ByteTrack + Perspective Transform**
 
-A professional, industry-ready implementation for estimating **real-world vehicle speeds** from CCTV footage.  
-Built for applications in **Smart Transportation, OEM Telematics (TATA/Mahindra), Traffic Analytics & Intelligent Surveillance**.
+A professional, industry-ready pipeline for estimating **real-world vehicle speeds** from CCTV footage.  
+Designed for **Smart Transportation, OEM Telematics (TATA/Mahindra), Traffic Analytics & Intelligent Surveillance**.
 
 ---
 
+</div>
 
+---
 
 ## 🔍 **Project Overview**
 
-This project uses state-of-the-art vision models to detect, track, and calculate real-world vehicle speeds from angled CCTV highway footage.  
-It performs:
+This project performs accurate vehicle speed estimation using modern Computer Vision techniques:
 
 - YOLO11-based vehicle detection  
 - ByteTrack multi-object tracking  
-- Perspective-to-world coordinate mapping  
-- Real-world displacement → speed estimation (m/s → km/h)  
-- Annotated video output  
+- Perspective transformation for mapping pixel → real-world distances  
+- Speed estimation in km/h  
+- Annotated final video output  
 
-All code is executed inside a **Kaggle Notebook**.
+All implemented inside a **Kaggle Notebook** for easy reproducibility.
 
 ---
 
 ## 🧠 **How It Works**
 
 ### **1️⃣ YOLO11 Detection**
-Detects vehicles per frame with high accuracy & real-time inference.
+Accurate real-time vehicle detection on highway CCTV feeds.
 
 ### **2️⃣ ByteTrack Tracking**
-Assigns stable IDs, even during occlusions.
+Stable tracking IDs are assigned to each vehicle, even with partial occlusions.
 
 ### **3️⃣ Perspective Transformation**
-Raw footage is distorted; so we correct it using:
+Corrects camera angle distortions using:
 
-
-This maps pixel coordinates → actual road distances (meters).
 
 ### **4️⃣ Speed Estimation**
 
@@ -45,45 +44,48 @@ This maps pixel coordinates → actual road distances (meters).
 
 </div>
 
-We compute displacement using **Euclidean distance + Median Filtering** across frames.
+Displacement is calculated using Euclidean distance + median filtering.
 
 ---
 
-## 🚀 **Key Features**
+## 🛠️ **Tech Stack (Logos + Names)**
 
-- High-accuracy YOLO11 vehicle detection  
-- Smooth tracking using ByteTrack  
-- True world-distance measurement via homography  
-- Real-time speed overlay on video  
-- Noise reduction using median smoothing  
-- Works on any fixed CCTV angle  
+<h3 align="left">Tools & Libraries Used</h3>
 
----
-
-## 🛠️ **Tech Stack (With Official Logos)**
-
-<h3 align="left">Languages & Tools:</h3>
 <p align="left">
 
 <a href="https://www.python.org/" target="_blank">
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="50" height="50" alt="Python"/>
-</a>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="55" height="55"/>
+</a>  
+<br><b>Python</b>
+
+<br><br>
 
 <a href="https://opencv.org/" target="_blank">
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/opencv/opencv-original.svg" width="50" height="50" alt="OpenCV"/>
-</a>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/opencv/opencv-original.svg" width="55" height="55"/>
+</a>  
+<br><b>OpenCV</b>
+
+<br><br>
 
 <a href="https://numpy.org/" target="_blank">
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original.svg" width="50" height="50" alt="NumPy"/>
-</a>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original.svg" width="55" height="55"/>
+</a>  
+<br><b>NumPy</b>
+
+<br><br>
 
 <a href="https://github.com/ifzhang/ByteTrack" target="_blank">
-<img src="https://img.icons8.com/?size=512&id=GfDlQKkZSv2S&format=png" width="50" height="50" alt="ByteTrack"/>
-</a>
+<img src="https://img.icons8.com/?size=512&id=GfDlQKkZSv2S&format=png" width="55" height="55"/>
+</a>  
+<br><b>ByteTrack</b>
+
+<br><br>
 
 <a href="https://ultralytics.com/" target="_blank">
-<img src="https://raw.githubusercontent.com/ultralytics/assets/main/logo/ultralytics-logo.png" width="120" alt="YOLO11"/>
-</a>
+<img src="https://raw.githubusercontent.com/ultralytics/assets/main/logo/ultralytics-logo.png" width="140"/>
+</a>  
+<br><b>YOLO11</b>
 
 </p>
 
@@ -91,37 +93,37 @@ We compute displacement using **Euclidean distance + Median Filtering** across f
 
 ## ▶️ **How to Run (Kaggle Notebook)**
 
-1. Upload your video  
-2. Define perspective points  
-3. Run YOLO11 detection  
-4. Run ByteTrack tracker  
-5. Execute speed estimation cell  
-6. Download the annotated output video  
+1. Upload input CCTV video  
+2. Set 4 perspective calibration points  
+3. Run YOLO detection cells  
+4. Run ByteTrack ID assignment  
+5. Execute speed estimation block  
+6. Download final annotated video  
 
 ---
 
-## 📊 Insights from the Experiment
+## 📊 **Key Insights**
 
-- Vehicles moving toward camera appear faster due to angle compression  
-- Opposite lane shows traffic build-up → lower speeds  
-- Tracking stability determines accuracy  
-- Homography gives near real-world precision  
+- Speed accuracy depends on calibration  
+- Tracking stability improves results  
+- Highway directional angle affects perceived motion  
+- Homography significantly boosts real-world precision  
 
 ---
 
-## 🔮 Improvements & Future Scope
+## 🔮 **Future Enhancements**
 
-- ANPR (Number Plate Recognition)  
-- Overspeed violation alerts  
-- Vehicle classification (car/truck/bus)  
-- Traffic flow & congestion analytics  
-- Dashboard integration for OEM telematics  
+- ANPR (Automatic Number Plate Recognition)  
+- Overspeed violation detection  
+- Vehicle type classification  
+- Telematics dashboard for OEMs  
+- Real-time deployment with FastAPI  
 
 ---
 
 ## 📜 License
 
-This project is covered under the **MIT License**.
+This project is licensed under the **MIT License**.
 
 ---
 
@@ -129,14 +131,13 @@ This project is covered under the **MIT License**.
 
 **Musaddiqua Rajannavar**  
 AIML Trainee | Technologics Global  
-📧 your-musaddiquarajannavar@gmail.com  
-🔗 GitHub: https://github.com/your-username
+📧 musaddiquarajannavar@gmail.com  
+🔗 GitHub: https://github.com/your-username  
 
 ---
 
 <div align="center">
 
-⭐ *If this project helped you, please star the repository. It motivates further development.*
+⭐ *Star the repo if this project helped you—your support motivates further development!*
 
 </div>
-
