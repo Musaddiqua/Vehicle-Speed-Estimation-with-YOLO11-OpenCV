@@ -7,17 +7,7 @@ Built for applications in **Smart Transportation, OEM Telematics (TATA/Mahindra)
 
 ---
 
-### 📹 **Output Preview**
 
-https://raw.githubusercontent.com/Musaddiqua/output/main/Screen%20Recording%202025-09-30%20230305.mp4
-
-
-
----
-
-</div>
-
----
 
 ## 🔍 **Project Overview**
 
