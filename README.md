@@ -132,7 +132,7 @@ This project is licensed under the **MIT License**.
 **Musaddiqua Rajannavar**  
 AIML Trainee | Technologics Global  
 📧 musaddiquarajannavar@gmail.com  
-🔗 GitHub: https://github.com/your-username  
+🔗 GitHub: https://github.com/musaddiqua 
 
 ---
 
