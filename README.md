@@ -135,8 +135,8 @@ This project is covered under the **MIT License**.
 ## 👩‍💻 **Author**
 
 **Musaddiqua Rajannavar**  
-AIML Intern | Technologics Global  
-📧 your-email@example  
+AIML Trainee | Technologics Global  
+📧 your-musaddiquarajannavar@gmail.com  
 🔗 GitHub: https://github.com/your-username
 
 ---
