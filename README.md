@@ -64,3 +64,96 @@ The most essential step.
 Camera perspective distorts distances.  
 We correct that using a **homography matrix**:
 
+This maps every object’s pixel location → real-world coordinates.
+
+---
+
+## ✨ Speed Estimation Formula (Pretty Version)
+
+<div align="center">
+
+### 📐 **Speed Computation**
+
+
+Where:
+
+- displacement is median of last N frame movements  
+- mapped using perspective transform matrix **H**  
+- FPS is frames per second of video  
+
+</div>
+
+---
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+| Tool | Icon |
+|------|------|
+| **Python** | 🐍 |
+| **YOLO11 (Ultralytics)** | ⚡ |
+| **ByteTrack** | 🔗 |
+| **OpenCV** | 🎥 |
+| **NumPy** | 📊 |
+| **Supervision** | 🧩 |
+
+</div>
+
+---
+
+## ▶️ Running the Notebook
+
+Since this project runs on Kaggle:
+
+1. Open the notebook  
+2. Upload your highway footage  
+3. Run cells in order  
+4. Insert your perspective points in the UI cell  
+5. Final video will render with speed overlays  
+
+---
+
+## 📊 Insights Observed
+
+- Vehicles moving toward camera → appear faster  
+- Opposite lane shows slower movement due to queue  
+- FPS stabilization improves output consistency  
+- Median filtering removes jitter  
+
+---
+
+## 🔮 Future Enhancements
+
+- 🔍 **License Plate Recognition** (ANPR)  
+- 🚦 **Overspeed Violation Alerts**  
+- 🧠 **Traffic Congestion Prediction**  
+- 🚚 **Vehicle Classification (Truck/Car/Bus)**  
+- 🛰️ **Integration with telematics dashboards**  
+
+---
+
+## 📜 License
+
+Distributed under the **MIT License**.  
+Feel free to fork, use, or improve with attribution.
+
+---
+
+## 👩‍💻 Author
+
+**Musaddiqua Rajannavar**  
+AIML Intern | Technologics Global  
+📧 *your email*  
+🔗 GitHub: *your GitHub link*
+
+---
+
+<div align="center">
+
+### ⭐ If you like this project, consider giving it a star on GitHub!
+
+</div>
+
+
+
